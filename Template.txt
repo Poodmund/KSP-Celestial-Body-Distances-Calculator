@@ -1,0 +1,7 @@
+semiMajorAxis
+eccentricity
+inclination
+longitudeOfAscendingNode
+argumentOfPeriapsis
+meanAnomalyAtEpoch
+period
