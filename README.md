@@ -1,20 +1,25 @@
-
-
 # KSP-Celestial-Body-Distances-Calculator
 A python script that can be run to determine the maximum and minimum distances between two celestial bodies from Kerbal Space Program over a specified time period from Day 0 in Kerbin years.
 
 ## Installation
 
-1. Install Python and NumPy
+1. Install Python, NumPy, Cython and SetupTools
 
-Download and install Python (https://www.python.org/downloads/). Following Python installation, open your command prompt and enter the following command:
+Download and install Python (https://www.python.org/downloads/). Following Python installation, open your command prompt and enter the following commands:
 ```
 pip install numpy
+pip install cython
+pip install setuptools
 ```
 
 2. Run the script
 
 Download this repository and, in your command prompt, navigate to the repository folder. Run the following command:
+```
+setup.py build_ext --inplace
+
+```
+This will run the Cython compilation process. Following this, you can run the calculation by running the command:
 ```
 calc.py
 ```
@@ -57,5 +62,5 @@ Enter name of the second body: Duna
 Enter the number of Kerbin years to run for: 1000
 Minimum Distance: 6069286587.329437 meters
 Maximum Distance: 35383027778.77004 meters
-Calculation Time: 3m 52s
+Calculation Time: 18s
 ```
