@@ -17,7 +17,6 @@ pip install setuptools
 Download this repository and, in your command prompt, navigate to the repository folder. Run the following command:
 ```
 setup.py build_ext --inplace
-
 ```
 This will run the Cython compilation process. Following this, you can run the calculation by running the command:
 ```
