@@ -76,6 +76,20 @@ def calculate_min_max_distance_partial(body1_name, body2_name, M01, T1, M02, T2,
 
     return min_distance, max_distance
 
+def format_duration(seconds):
+    # Compute hours, minutes, and seconds
+    hours = seconds // 3600
+    minutes = (seconds % 3600) // 60
+    seconds = seconds % 60
+
+    # Format output string conditionally based on the presence of hours and minutes
+    if hours > 0:
+        return f"{int(hours)}h {int(minutes)}m {int(seconds)}s"
+    elif minutes > 0:
+        return f"{int(minutes)}m {int(seconds)}s"
+    else:
+        return f"{int(seconds)}s"
+
 # Main calculation
 if __name__ == "__main__":
     
@@ -121,6 +135,8 @@ if __name__ == "__main__":
 
     # End timing
     end_time = time.time()
+    calculation_time = end_time - start_time
+    formatted_time = format_duration(calculation_time)
 
     # Combine results from all processes
     min_dist = min(result[0] for result in results)
@@ -129,4 +145,4 @@ if __name__ == "__main__":
     # Print results
     print(f"Minimum Distance: {min_dist} meters")
     print(f"Maximum Distance: {max_dist} meters")
-    print(f"Calculation Time: {end_time - start_time} seconds")
+    print(f"Calculation Time: {formatted_time}")
