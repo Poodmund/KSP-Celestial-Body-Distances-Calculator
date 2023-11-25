@@ -6,13 +6,16 @@ import cython_functions
 
 def read_orbital_parameters(body_name):
     script_dir = os.path.dirname(os.path.realpath(__file__))
-    file_path = os.path.join(script_dir, f'{body_name}.txt')
+    file_path = os.path.join(script_dir, 'bodies', f'{body_name}.txt')
 
     if not os.path.exists(file_path):
         raise FileNotFoundError(f"No data file found for {body_name}")
 
     with open(file_path, 'r') as file:
         params = [float(line.strip()) for line in file.readlines()]
+
+    if len(params) < 8:
+        raise ValueError(f"Not enough data in file for {body_name}. Expected at least 8 values.")
 
     return np.array(params)  # Convert to a NumPy array
 
@@ -30,7 +33,7 @@ def format_duration(seconds):
 # Main calculation
 if __name__ == "__main__":
 
-    # Ask for the names of the two bodies to calculate the distances between: Moho, Eve, Kerbin, Duna, Dres, Jool, Eeloo
+    # Ask for the names of the two bodies to calculate the distances between: Moho, Eve, Kerbin, Duna, Dres, Jool, Eeloo, Sarnus, Urlum, Neidon, Plock
     body1_name = input("Enter name of the first body: ")
     body2_name = input("Enter name of the second body: ")
     

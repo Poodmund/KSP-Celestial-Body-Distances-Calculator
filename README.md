@@ -18,16 +18,19 @@ Download this repository and, in your command prompt, navigate to the repository
 ```
 setup.py build_ext --inplace
 ```
-This will run the Cython compilation process. Following this, you can run the calculation by running the command:
+This will run the Cython compilation process. Following this, you can run, either, the script to calculate the distance between two bodies (calcSingle.py) or the script to calculate the distance between a specified body and all other bodies (calcAll.py), by running the commands:
 ```
-calc.py
+calcSingle.py
+```
+```
+calcAll.py
 ```
 
 3. Enter your calculation details
 
 The following information is required to be entered by the user:
 - First celestial body
-- Second celestial body
+- Second celestial body (only if you have chosen to run calcSingle.py)
 - Period of time to iterate over (in Kerbin years)
 
 4. The calculation will run and will return the results and the total duration taken to calculate.
@@ -40,6 +43,10 @@ The following information is required to be entered by the user:
 - Dres
 - Jool
 - Eeloo
+- Sarnus
+- Urlum
+- Neidon
+- Plock
 
 Additional celestial bodies can be added by following the same format as the included file 'Template.txt'.
 
@@ -55,7 +62,7 @@ The script is currently set up to iterate over celestial bodies positions each h
 
 Here is an example of the calculation being run with the output on an Intel i9-9900KS @ 4.8GHz all core workload.
 ```
->calc.py
+>calcSingle.py
 Enter name of the first body: Kerbin
 Enter name of the second body: Duna
 Enter the number of Kerbin years to run for: 1000

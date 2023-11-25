@@ -10,7 +10,10 @@ cpdef tuple calculate_body_params(np.ndarray[double, ndim=1] params, double t):
     cdef double omega = np.radians(params[4])
     cdef double M0 = params[5]
     cdef double T = params[6]
-    cdef double M = M0 + (2 * np.pi / T) * t
+    cdef double epoch = params[7]
+
+    # Calculate the mean anomaly at time t, considering the epoch
+    cdef double M = M0 + (2 * np.pi / T) * (t - epoch)
     return (a, e, i, Omega, omega, M)  # Return as tuple
 
 cdef double kepler_equation(double E, double M, double e):
