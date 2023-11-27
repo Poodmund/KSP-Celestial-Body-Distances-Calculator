@@ -1,5 +1,5 @@
 # KSP-Celestial-Body-Distances-Calculator
-A set of python script that can be run to determine the maximum and minimum distances between two celestial bodies from Kerbal Space Program over specified time periods.
+A set of python scripts that can be run to determine the maximum and minimum distances between celestial bodies from Kerbal Space Program over specified time periods.
 
 ## Installation
 
