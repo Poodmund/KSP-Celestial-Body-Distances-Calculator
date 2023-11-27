@@ -4,3 +4,6 @@ cython_functions.c
 build/temp.win-amd64-cpython-312/Release/cython_functions.obj
 build/temp.win-amd64-cpython-312/Release/cython_functions.cp312-win_amd64.lib
 build/temp.win-amd64-cpython-312/Release/cython_functions.cp312-win_amd64.exp
+calcAllBackup.py
+calcSingleBackup.py
+cython_functionsBackup.pyx

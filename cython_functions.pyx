@@ -61,6 +61,8 @@ cpdef np.ndarray[double, ndim=1] orbital_to_cartesian(double a, double e, double
 cpdef tuple calculate_min_max_distance_partial(np.ndarray[double, ndim=1] params1, np.ndarray[double, ndim=1] params2, np.ndarray[double, ndim=1] time_steps):
     cdef double min_distance = np.inf
     cdef double max_distance = 0
+    cdef double min_time = 0
+    cdef double max_time = 0
     cdef double distance
     cdef np.ndarray[double, ndim=1] r1, r2
 
@@ -71,7 +73,9 @@ cpdef tuple calculate_min_max_distance_partial(np.ndarray[double, ndim=1] params
 
         if distance < min_distance:
             min_distance = distance
+            min_time = t
         if distance > max_distance:
             max_distance = distance
+            max_time = t
 
-    return (min_distance, max_distance)
+    return (min_distance, min_time, max_distance, max_time)
